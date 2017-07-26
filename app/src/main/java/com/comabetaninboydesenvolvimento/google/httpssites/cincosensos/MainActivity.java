@@ -19,7 +19,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 /**
  * Este aplicativo exibe um percentual de aplicação do programa 5S em uma empresa qualquer
  */
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     /**
      * Esse método é chamado quando o botão da nota é clicado. Mostrando o resultado e realizando
@@ -68,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 baseCalculoUtilizaçao = 0;
                 break;
         }
-
 
         radioOrganizaçao = (RadioGroup) findViewById(R.id.radio_organizaçao);
         switch (radioOrganizaçao.getCheckedRadioButtonId()) {
@@ -130,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 baseCalculoPadronizaçao + baseCalculoDisciplina)) / 10;
     }
 
-
     public void nota(View view) {
         /**Este check box serve para colocar a caixa de seleção, o boolean é chamado para verificar
          *  no id que foi colocado no findViewById, trazendo assim o valor verdadeiro ou falso.
@@ -170,21 +166,35 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radioDisciplina = (RadioGroup) findViewById(R.id.radio_disciplina);
         boolean hasRadioDisciplina = radioDisciplina.isSelected();
 
-        CheckBox respondidoUtilizaçaoCheckBox = (CheckBox) findViewById(R.id.respondido_utilizaçao_checkbox);
-        boolean hasRespondidoUtilizaçao = respondidoUtilizaçaoCheckBox.isChecked();
+        CheckBox semUtilizaçaoCheckBox = (CheckBox) findViewById(R.id.sem_utilizaçao_checkbox);
+        boolean hasSemUtilizaçao = semUtilizaçaoCheckBox.isChecked();
 
-        CheckBox respondidoOrganizaçaoCheckBox = (CheckBox) findViewById(R.id.respondido_organizaçao_checkbox);
-        boolean hasRespondidoOrganizaçao = respondidoOrganizaçaoCheckBox.isChecked();
+        CheckBox malUtilizaçaoCheckBox = (CheckBox) findViewById(R.id.mal_utilizaçao_checkbox);
+        boolean hasMalUtilizaçao = malUtilizaçaoCheckBox.isChecked();
 
-        CheckBox respondidoLimpezaCheckBox = (CheckBox) findViewById(R.id.respondido_limpeza_checkbox);
-        boolean hasRespondidoLimpeza = respondidoLimpezaCheckBox.isChecked();
+        CheckBox desorganizaçaoCheckBox = (CheckBox) findViewById(R.id.desorganizado_checkbox);
+        boolean hasDesorganizado = desorganizaçaoCheckBox.isChecked();
 
-        CheckBox respondidoPadronizaçaoCheckBox = (CheckBox) findViewById(R.id.respondido_padronizaçao_checkbox);
-        boolean hasRespondidoPadronizaçao = respondidoPadronizaçaoCheckBox.isChecked();
+        CheckBox obstruindoCheckBox = (CheckBox) findViewById(R.id.obstruindo_checkbox);
+        boolean hasObstruindo = obstruindoCheckBox.isChecked();
 
-        CheckBox respondidoDisciplinaCheckBox = (CheckBox) findViewById(R.id.respondido_disciplina_checkbox);
-        boolean hasRespondidoDisciplina = respondidoDisciplinaCheckBox.isChecked();
+        CheckBox sujoCheckBox = (CheckBox) findViewById(R.id.sujo_checkbox);
+        boolean hasSujo = sujoCheckBox.isChecked();
 
+        CheckBox paredesTachadasCheckBox = (CheckBox) findViewById(R.id.paredes_tachadas_checkbox);
+        boolean hasParedesTachadas = paredesTachadasCheckBox.isChecked();
+
+        CheckBox semPadronizaçaoCheckBox = (CheckBox) findViewById(R.id.sem_padronizaçao_checkbox);
+        boolean hasSemPadronizaçao = semPadronizaçaoCheckBox.isChecked();
+
+        CheckBox padraoObsoletoCheckBox = (CheckBox) findViewById(R.id.padrao_obsoleto_checkbox);
+        boolean hasPadraoObsoleto = padraoObsoletoCheckBox.isChecked();
+
+        CheckBox semDisciplinaCheckBox = (CheckBox) findViewById(R.id.sem_disciplina_checkbox);
+        boolean hassemDisciplina = semDisciplinaCheckBox.isChecked();
+
+        CheckBox sensoErradoCheckBox = (CheckBox) findViewById(R.id.senso_errado_checkbox);
+        boolean hasSensoErrado = sensoErradoCheckBox.isChecked();
 
         /**
          * Este Resultado chama o calculo que será utilizado e mostrado no e-mail
@@ -193,9 +203,9 @@ public class MainActivity extends AppCompatActivity {
         int resultado = createResultado(radioUtilizaçao, radioOrganizaçao, radioLimpeza,
                 radioPadronizaçao, radioDisciplina, radioOrganizaçao);
         String resultadoMessage = resultadoSummaryTextView(nome, observaUtiliza, observaOrganiza, observalimpa,
-                observaPadroniza, observaDisciplina, resultado, hasRespondidoUtilizaçao,
-                hasRespondidoOrganizaçao, hasRespondidoLimpeza, hasRespondidoPadronizaçao, hasRespondidoDisciplina);
-
+                observaPadroniza, observaDisciplina, resultado, hasSemUtilizaçao, hasMalUtilizaçao,
+                hasDesorganizado, hasObstruindo, hasSujo, hasParedesTachadas, hasSemPadronizaçao,
+                hasPadraoObsoleto, hassemDisciplina, hasSensoErrado);
 
         /**
          * Este Intent chama a o e-mail, onde serão colocados os dados, como o nome do setor,
@@ -209,7 +219,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-
         /**
          * Esta menssagem de Toast, somente serve para lembrar se a pessoa selecionou tudo.
          */
@@ -218,62 +227,76 @@ public class MainActivity extends AppCompatActivity {
 
         displayMessage(resultadoMessage);
         {
-
         }
     }
 
     /**
      * Estes códigos são o que irá na menssagem do e-mail.
-     *
-     * @param nome
+     *  @param nome
      * @param observaUtiliza
      * @param observaOrganiza
      * @param observalimpa
      * @param observaPadroniza
      * @param observaDisciplina
      * @param resultado
-     * @param hasRespondidoUtilizaçao
-     * @param hasRespondidoOrganizaçao
-     * @param hasRespondidoLimpeza
-     * @param hasRespondidoPadonizaçao
-     * @param hasRespondidoDisciplina  @return
+     * @param hasSemUtilizaçao
+     * @param hasMalUtilizaçao
+     * @param hasDesorganizado
+     * @param hasObstruindo
+     * @param hasSujo
+     * @param hasParedesTachadas
+     * @param hasSemPadronizaçao
+     * @param hasPadraoObsoleto
+     * @param hassemDisciplina
+     * @param hasSensoErrado  @return
      */
 
     private String resultadoSummaryTextView(String nome, String observaUtiliza, String observaOrganiza,
                                             String observalimpa, String observaPadroniza, String
                                                     observaDisciplina, int resultado,
-                                            boolean hasRespondidoUtilizaçao,
-                                            boolean hasRespondidoOrganizaçao, boolean hasRespondidoLimpeza
-            , boolean hasRespondidoPadonizaçao, boolean hasRespondidoDisciplina) {
+                                            boolean hasSemUtilizaçao, boolean hasMalUtilizaçao,
+                                            boolean hasDesorganizado, boolean hasObstruindo, boolean
+                                            hasSujo, boolean hasParedesTachadas, boolean hasSemPadronizaçao,
+                                            boolean hasPadraoObsoleto, boolean hassemDisciplina,
+                                            boolean hasSensoErrado) {
         String resultadoMessage = "Setor : " + nome;
         resultadoMessage += "\n ";
         resultadoMessage += "\nNota: " + resultado + " %";
         resultadoMessage += "\n ";
         resultadoMessage += "\n";
-        resultadoMessage += "\nSeleção da Utilização = " + hasRespondidoUtilizaçao +
-                " Observação: " + observaUtiliza;
+        resultadoMessage += "\nSeleção da Utilização  " ;
+        resultadoMessage += "\nSem Utilização ? " + hasSemUtilizaçao;
+        resultadoMessage += "\nMal Utilização ? " + hasMalUtilizaçao;
+        resultadoMessage += "\n Observação: " + observaUtiliza;
         resultadoMessage += "\n ";
-        resultadoMessage += "\nSeleção da Organização = " + hasRespondidoOrganizaçao +
-                " Observação: " + observaOrganiza;
+        resultadoMessage += "\nSeleção da Organização  " ;
+        resultadoMessage += "\nEstá Desorganizado ? " + hasDesorganizado;
+        resultadoMessage += "\nTem Material Obstruindo ? " + hasObstruindo;
+        resultadoMessage += "\n Observação: " + observaOrganiza;
         resultadoMessage += "\n ";
-        resultadoMessage += "\nSeleção da Limpeza = " + hasRespondidoLimpeza +
-                " Observação: " + observalimpa;
+        resultadoMessage += "\nSeleção da Limpeza  " ;
+        resultadoMessage += "\nO local está sujo ? " + hasSujo;
+        resultadoMessage += "\nTem Paredes tachadas ? " + hasParedesTachadas;
+        resultadoMessage += "\n Observação: " + observalimpa;
         resultadoMessage += "\n ";
-        resultadoMessage += "\nSeleção da Padronização = " + hasRespondidoPadonizaçao +
-                " Observação: " + observaPadroniza;
+        resultadoMessage += "\nSeleção da Padronização ";
+        resultadoMessage += "\nO setor está sem padronização ? " + hasSemPadronizaçao;
+        resultadoMessage += "\nTem Padrão obsoleto ? " + hasPadraoObsoleto;
+        resultadoMessage += "\n Observação: " + observaPadroniza;
         resultadoMessage += "\n ";
-        resultadoMessage += "\n\nSeleção da Disciplina = " + hasRespondidoDisciplina +
-                " Observação: " + observaDisciplina;
+        resultadoMessage += "\n\nSeleção da Disciplina ";
+        resultadoMessage += "\nO setor tem disciplina ? " + hassemDisciplina;
+        resultadoMessage += "\nTem algum senso errado ? " + hasSensoErrado;
+        resultadoMessage += "\n Observação: " + observaDisciplina;
+        resultadoMessage += "\n ";
 
         return resultadoMessage;
     }
-
 
     private void displayMessage(String message) {
         TextView resultadoSummaryTextView = (TextView) findViewById(R.id.resultado_summary_text_view);
         resultadoSummaryTextView.setText(message);
     }
-
 
     /**
      * Esta parte do código nos serve para orientar pelos menssagem TOAST ao usuario para saber

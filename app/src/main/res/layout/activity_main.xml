@@ -24,25 +24,24 @@
                 android:paddingRight="16dp"
                 android:paddingTop="16dp">
 
-
-
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/cinco"/>
+                    android:src="@drawable/cinco" />
 
                 <EditText
                     android:id="@+id/campo_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nome do Setor auditado"
-                    android:inputType="text"/>
+                    android:inputType="text" />
+
                 <TextView
                     style="@style/CustomText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Criado por Lucas M. Boy"/>
+                    android:text="Criado por Lucas M. Boy" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -52,7 +51,6 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="16dp">
-
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -70,18 +68,6 @@
                             android:paddingRight="16dp"
                             android:paddingTop="16dp"
                             android:text="Senso da Utilização" />
-
-                        <CheckBox
-                            android:id="@+id/respondido_utilizaçao_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:text="RESPONDIDO" />
 
                     </LinearLayout>
 
@@ -114,7 +100,6 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
                             <RadioGroup
                                 android:id="@+id/radio_utilizaçao"
                                 android:layout_width="wrap_content"
@@ -144,8 +129,41 @@
 
                             </RadioGroup>
 
-
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/sem_utilizaçao_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Sem Utilização"
+                            android:textSize="12sp"/>
+
+                        <CheckBox
+                            android:id="@+id/mal_utilizaçao_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Mal Utilizados"
+                            android:textSize="12sp"/>
 
                     </LinearLayout>
 
@@ -164,7 +182,7 @@
                             android:id="@+id/observaçoes_utilizaçao"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Escrever as Observações " />
+                            android:hint="Escrever as Observações  " />
 
                     </LinearLayout>
 
@@ -190,18 +208,6 @@
                             android:paddingRight="16dp"
                             android:paddingTop="16dp"
                             android:text="Senso da Organização" />
-
-                        <CheckBox
-                            android:id="@+id/respondido_organizaçao_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:text="RESPONDIDO" />
 
                     </LinearLayout>
 
@@ -263,8 +269,41 @@
 
                             </RadioGroup>
 
-
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/desorganizado_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Desorganizado"
+                            android:textSize="12sp"/>
+
+                        <CheckBox
+                            android:id="@+id/obstruindo_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Obstruindo local"
+                            android:textSize="12sp"/>
 
                     </LinearLayout>
 
@@ -310,18 +349,6 @@
                             android:paddingRight="16dp"
                             android:paddingTop="16dp"
                             android:text="Senso da Limpeza" />
-
-                        <CheckBox
-                            android:id="@+id/respondido_limpeza_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:text="RESPONDIDO" />
 
                     </LinearLayout>
 
@@ -387,6 +414,40 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/sujo_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Local sujo"
+                            android:textSize="12sp"/>
+
+                        <CheckBox
+                            android:id="@+id/paredes_tachadas_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Paredes tachadas"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -428,18 +489,6 @@
                             android:paddingTop="16dp"
                             android:text="Senso da Padronização" />
 
-                        <CheckBox
-                            android:id="@+id/respondido_padronizaçao_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:text="RESPONDIDO" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -452,7 +501,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/CustomText"
@@ -501,6 +549,41 @@
                             </RadioGroup>
 
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/sem_padronizaçao_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Sem Padrão"
+                            android:textSize="12sp"/>
+
+                        <CheckBox
+                            android:id="@+id/padrao_obsoleto_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Padrão obsoleto"
+                            android:textSize="12sp"/>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -545,18 +628,6 @@
                             android:paddingTop="16dp"
                             android:text="Senso da Disciplina" />
 
-                        <CheckBox
-                            android:id="@+id/respondido_disciplina_checkbox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:paddingBottom="16dp"
-                            android:paddingLeft="16dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:text="RESPONDIDO" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -569,7 +640,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/CustomText"
@@ -617,8 +687,41 @@
 
                             </RadioGroup>
 
-
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/sem_disciplina_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Não segue normas"
+                            android:textSize="12sp"/>
+
+                        <CheckBox
+                            android:id="@+id/senso_errado_checkbox"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Disciplina inadequada" />
 
                     </LinearLayout>
 
@@ -665,10 +768,10 @@
                     android:onClick="nota"
                     android:text="NOTA" />
 
-
             </LinearLayout>
 
-
         </FrameLayout>
+
     </HorizontalScrollView>
+
 </ScrollView>
